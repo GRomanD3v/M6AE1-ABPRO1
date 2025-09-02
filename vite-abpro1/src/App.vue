@@ -4,7 +4,7 @@ import RegisterForm from './components/RegisterForm.vue';
 
 <template>
 <main>
-  <h1>Hola mundo</h1>
+  <h1>M6-ABPRO1</h1>
   <RegisterForm />
 </main>
 </template>

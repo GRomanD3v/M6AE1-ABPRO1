@@ -45,7 +45,7 @@ export default {
            <input type="number" class="form-control" id="
             edadImput" v-model="edad">
         </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
+        <button type="submit" class="btn btn-danger mt-3 p-3">Enviar</button>
     </form>
 
     <div class="card mt-4" v-if="mostrarResumen">
