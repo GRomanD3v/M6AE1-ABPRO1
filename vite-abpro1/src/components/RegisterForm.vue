@@ -28,39 +28,63 @@ export default {
 </script>
 
 <template>
-<div class="container mt-5">
-    <form @submit.prevent="enviarFormulario" v-if="!mostrarResumen">
-        <div class="mb-3">
-            <label for="nombreImput" class="form-label">Nombre:</label>
-            <input type="text" class="form-control" id="
+    <div class="container mt-5">
+        <form @submit.prevent="enviarFormulario" v-if="!mostrarResumen">
+            <div class="mb-3">
+                <label for="nombreImput" class="form-label">Nombre:</label>
+                <input type="text" class="form-control" id="
             nombreImput" v-model="nombre">
-        </div>
-        <div class="mb-3">
-           <label for="correoImput" class="form-label">Correo:</label>
-           <input type="email" class="form-control" id="
-            correoImput" v-model="correo"> 
-        </div>
-        <div class="mb-3">
-           <label for="edadImput" class="form-label">Edad:</label>
-           <input type="number" class="form-control" id="
+            </div>
+            <div class="mb-3">
+                <label for="correoImput" class="form-label">Correo:</label>
+                <input type="email" class="form-control" id="
+            correoImput" v-model="correo">
+            </div>
+            <div class="mb-3">
+                <label for="edadImput" class="form-label">Edad:</label>
+                <input type="number" class="form-control" id="
             edadImput" v-model="edad">
-        </div>
-        <button type="submit" class="btn btn-danger mt-3 p-3">Enviar</button>
-    </form>
+            </div>
+            <button type="submit" class="btn mt-3 p-3">Enviar</button>
+        </form>
 
-    <div class="card mt-4" v-if="mostrarResumen">
-        <div class="card-header">
-            Resumen de Registro
+        <div class="card mt-4" v-if="mostrarResumen">
+            <div class="card-header">
+                Resumen de Registro
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
+                <li class="list-group-item"><strong>Correo:</strong> {{ correo }}</li>
+                <li class="list-group-item"><strong>Edad:</strong> {{ edad }}</li>
+            </ul>
+            <div class="card-footer">
+                <button class="btn" @click="limpiarFormulario">Limpiar Formulario</button>
+            </div>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item"><strong>Nombre:</strong> {{ nombre }}</li>
-            <li class="list-group-item"><strong>Correo:</strong> {{ correo }}</li>
-            <li class="list-group-item"><strong>Edad:</strong> {{ edad }}</li>
-        </ul>
-        <div class="card-footer">
-            <button class="btn btn-danger" @click="limpiarFormulario">Limpiar Formulario</button>
-        </div>
+
     </div>
-
-</div>
 </template>
+
+<style scoped>
+.btn {
+    background-color: #1dd105;
+    color: rgb(255, 255, 255);
+    width: 500px;
+    border: 1px solid;
+    border-color: #1dd105;
+}
+
+.btn:hover {
+    background-color: #030596;
+    color: white;
+    border: none;
+}
+
+.card-header {
+    font-family: 'Saira Stencil One', cursive;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+</style>
